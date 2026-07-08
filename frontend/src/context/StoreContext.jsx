@@ -3,7 +3,7 @@ import { food_list} from '../assets/frontend_assets/assets.js'
 import { useEffect } from "react";
 export const StoreContext =createContext(null)
 import axios from "axios";
-const url = "http://localhost:5000";
+const url = " https://food-app-g7b9.onrender.com";
 const StoreContextProvider=(props)=>{
     const [cartItem,setCartItem]=useState({});
 const [token, setToken] = useState(localStorage.getItem("token") || null);
