@@ -1,0 +1,27 @@
+# Node modules
+**/node_modules/
+
+# Environment files
+**/.env
+**/.env.*
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build folders
+**/dist/
+**/build/
+
+# Uploads (optional - agar upload images GitHub par nahi chahiye)
+backend/uploads/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# IDE files
+.idea/
