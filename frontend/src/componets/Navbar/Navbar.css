@@ -1,0 +1,144 @@
+.navbar{
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .logo{
+    width: 150px;
+}
+.navbar-menu{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    color: #49557e;
+    font-size: 18px;
+}
+.navbar-right{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.navbar button{
+    background: transparent;
+    font-size: 16px;
+    color: #49557e;
+    border: 1px solid tomato;
+    padding: 10px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.navbar button:hover{
+    background-color:#fff4f2 ;
+}
+.navbar .active{
+    padding-bottom: 2px;
+    border-bottom: 2px solid #49557e;
+}
+.navbar li{
+    cursor: pointer;
+}
+.nanbar-search-icon{
+   position: relative; 
+}
+.nanbar-search-icon .dot{
+    position: absolute;
+    min-height: 10px;
+    min-width: 10px;
+    background-color: tomato;
+    border-radius: 5px;
+    top :-8px;
+    right: -8px;
+}
+@media (max-width:900px){
+    .navbar .logo{
+        width: 120px;
+
+    }
+    .navbar-menu{
+        gap: 15px;
+        font-size: 16px;
+    }
+    .navbar-right{
+        gap: 20px;
+    }
+    .navbar-right img{
+        width: 20px;
+    }
+    .navbar-right button{
+padding: 7px 20px;
+font-size: 15px;
+    }
+}
+
+@media (max-width:480px){
+
+    .navbar-menu{
+       display: none;
+    }
+   
+}
+.navbar-profile{
+   position: relative; 
+}
+.navbar-dropdown{
+    position: absolute;
+    display: none;
+    right: 0;
+    z-index: 1;
+}
+.navbar-profile:hover .navbar-dropdown{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff3ef;
+    padding: 12px 25px;
+    border-radius: 4px;
+    border: 1px solid tomato;
+    outline:  2px solid white;
+    list-style: none;
+}
+.navbar-dropdown li{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+.navbar-dropdown img{
+    width: 20px;
+}
+.navbar-dropdown li:hover{
+    color: tomato;
+}
+.search-box{
+    position: absolute;
+    top: 70px;
+    left: 50%;
+     right: 120px;
+
+    width: 280px;
+    transform: translateX(-50%);
+    background: white;
+    padding: 10px;
+      z-index: 1000;
+    
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.search-results{
+    background: white;
+    margin-top: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.search-results p{
+    padding: 5px;
+    cursor: pointer;
+}
+
+.search-results p:hover{
+    background: #f5f5f5;
+}

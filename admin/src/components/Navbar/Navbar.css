@@ -1,0 +1,79 @@
+/* NAVBAR MAIN */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 4%;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* LOGO */
+.navbar .logo {
+  width: max(20%, 80px);
+  object-fit: contain;
+}
+
+/* PROFILE IMAGE */
+.navbar .profile {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid #eee;
+  transition: 0.2s;
+}
+
+.navbar .profile:hover {
+  transform: scale(1.05);
+}
+
+/* WRAPPER */
+.profile-wrapper {
+  position: relative;
+}
+
+/* DROPDOWN */
+.profile-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: white;
+  border-radius: 10px;
+  min-width: 180px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  overflow: hidden;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-in-out;
+    transform-origin: top right;
+}
+
+/* MENU ITEM */
+.profile-dropdown p {
+  padding: 12px 15px;
+  margin: 0;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.profile-dropdown p:hover {
+  background: #f3f4f6;
+  transform: scale(1.05);
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

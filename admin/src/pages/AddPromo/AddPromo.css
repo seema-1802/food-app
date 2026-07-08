@@ -1,0 +1,40 @@
+.add-promo{
+    width: 70%;
+    margin-left: max(5vw,25px);
+    margin-top: 50px;
+    color: #6d6d6d;
+    font-size: 16px;
+}
+
+.add-promo form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.add-promo input{
+    padding: 12px;
+    border: 1px solid tomato;
+    border-radius: 4px;
+    outline: none;
+}
+
+.add-promo button{
+    width: 150px;
+    padding: 12px;
+    border: none;
+    background-color: tomato;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.add-promo button:hover{
+    opacity: 0.9;
+}
+
+@media (max-width: 768px){
+    .add-promo{
+        width: 90%;
+    }
+}

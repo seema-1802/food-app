@@ -1,0 +1,240 @@
+/* HEADER MAIN */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+ width: 100%;
+ 
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  margin-bottom: 25px;
+}
+
+/* LEFT IMAGE */
+.profile-left {
+  flex-shrink: 0;
+}
+
+.img-wrapper {
+  position: relative;
+  width: 110px;
+  height: 110px;
+}
+.edit-btn {
+  
+   
+
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+
+  background: #4f46e5;
+  color: white;
+  font-size: 14px;
+
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.edit-btn:hover {
+  transform: scale(1.1);
+}
+
+.profile-image {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e5e7eb;
+  transition: 0.3s;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
+/* RIGHT INFO */
+.profile-right {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.profile-right h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.profile-right p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* ROLE BADGE */
+.role-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #e0f2fe;
+  color: #0284c7;
+  border-radius: 20px;
+  font-size: 12px;
+  width: fit-content;
+  margin-top: 5px;
+}
+/* PROFILE EDIT LIKE ADD PAGE */
+.profile-edit.add {
+  width: 70%;
+  margin-left: max(5vw, 25px);
+  margin-top: 30px;
+  color: #6d6d6d;
+  font-size: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* FORM GAP */
+.profile-edit.add .flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* IMAGE UPLOAD */
+.add-img img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 2px dashed #ddd;
+  transition: 0.3s;
+}
+
+.add-img img:hover {
+  transform: scale(1.05);
+}
+
+/* INPUT FIELDS */
+.add-product input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+}
+
+/* BUTTON */
+.add-btn {
+  max-width: 150px;
+  border: none;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.add-btn:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+}
+/* ACTION WRAPPER */
+.profile-actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+/* PASSWORD CARD */
+.profile-password.card-box {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: 0.3s;
+}
+
+.profile-password.card-box:hover {
+  transform: translateY(-3px);
+}
+
+/* TITLE */
+.profile-password h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* INPUT GROUP */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* INPUT STYLE */
+.profile-password input {
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.profile-password input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79,70,229,0.1);
+}
+
+/* BUTTON */
+.btn-primary {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(79,70,229,0.3);
+}
+.profile-card {
+  width: 100%;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.profile-container {
+  width: 100%;
+  max-width: 1000px;   /* optional clean dashboard look */
+  margin: 0 auto;
+  padding: 20px;
+}

@@ -1,0 +1,128 @@
+.login-container {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  
+  background: #f9fafb; /* very light clean bg */
+  padding-left: 24px;  /* 🔥 left spacing */
+}
+
+/* CARD */
+.login-box {
+  width: 100%;
+  max-width: 420px;
+
+  background: #ffffff;
+  padding: 28px;
+
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px; /* 🔥 better spacing */
+}
+
+/* TITLE */
+.login-box h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* FORM GAP */
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* 🔥 input spacing */
+}
+
+/* INPUTS */
+.login-box input {
+  width: 100%;
+  padding: 12px 14px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+
+  outline: none;
+  font-size: 14px;
+
+  background: #fff; /* clean real UI */
+  transition: 0.2s;
+}
+
+.login-box input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+}
+
+/* BUTTON */
+.login-box button {
+  width: 100%;
+  padding: 12px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #111827; /* 🔥 simple real UI black */
+  color: white;
+
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.login-box button:hover {
+  background: #1f2937;
+  transform: translateY(-1px);
+}
+
+/* SWITCH TEXT */
+.login-switch {
+  text-align: left; /* 🔥 real form feel */
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.login-switch span {
+  color: #4f46e5;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* ========================= */
+/* 📱 MOBILE RESPONSIVE */
+/* ========================= */
+@media (max-width: 480px) {
+  .login-box {
+    padding: 22px;
+    border-radius: 12px;
+  }
+
+  .login-box h2 {
+    font-size: 20px;
+  }
+
+  .login-box input {
+    padding: 11px;
+    font-size: 13px;
+  }
+
+  .login-box button {
+    padding: 11px;
+    font-size: 14px;
+  }
+}
+
+/* ========================= */
+/* 📱 TABLET RESPONSIVE */
+/* ========================= */
+@media (max-width: 768px) {
+  .login-box {
+    max-width: 380px;
+  }
+}
