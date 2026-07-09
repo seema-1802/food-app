@@ -17,10 +17,13 @@ const PORT =  5000
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://food-avrmkkp1t-seemas-projects-c915fb8d.vercel.app"
+    "https://food-app-five-ochre-16.vercel.app"
   ],
   credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
 }));
+app.options("*", cors());
 app.use(express.json())
 // app.use(cors())
 
