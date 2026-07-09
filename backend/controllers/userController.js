@@ -214,7 +214,8 @@ const sendEmailOtp = async (req, res) => {
 
     user.emailOtp = otp;
     user.emailOtpExpiry = Date.now() + 300000;
-
+console.log("USER FOUND:", user.email);
+console.log("OTP:", otp);
     await user.save();
 
     const transporter = nodemailer.createTransport({
