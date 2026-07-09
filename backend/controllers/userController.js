@@ -193,14 +193,24 @@ const sendEmailOtp = async (req, res) => {
 
     let user = await userModel.findOne({ email });
 
+    // if (!user) {
+    //   user = await userModel.create({
+    //     name: "Email User",
+    //     email,
+    //     password: "otp-user",
+    //     authProvider: "email"
+    //   });
+    // }
     if (!user) {
-      user = await userModel.create({
-        name: "Email User",
-        email,
-        password: "otp-user",
-        authProvider: "email"
-      });
-    }
+  user = new userModel({
+    name: "Email User",
+    email,
+    password: "otp-user",
+    authProvider: "email"
+  });
+
+  
+}
 
     user.emailOtp = otp;
     user.emailOtpExpiry = Date.now() + 300000;
@@ -233,7 +243,8 @@ console.log("SMTP Connected");
 
   } catch (error) {
     console.log("EMAIL OTP ERROR:", error);
-
+console.log("EMAIL OTP ERROR:", error.message);
+console.log(error);
     res.status(500).json({
       success: false,
       message: error.message
@@ -283,6 +294,7 @@ const updatePassword = async (req, res) => {
     });
 
     if (!user) {
+      
       return res.json({
         success: false,
         message: "User not found"
