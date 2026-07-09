@@ -14,9 +14,16 @@ dotenv.config()
 const app = express()
 connectDB()
 const PORT =  5000
-
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://food-avrmkkp1t-seemas-projects-c915fb8d.vercel.app"
+  ],
+  credentials: true,
+}));
 app.use(express.json())
-app.use(cors())
+// app.use(cors())
+
 // //app to
 app.use("/food",foodRouter);
  app.use("/images",express.static('uploads'))
