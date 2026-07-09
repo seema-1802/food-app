@@ -12,7 +12,8 @@ import "react-toastify/dist/ReactToastify.css";
 import Login from "./pages/Login/Login";
 import Dashboard from './pages/Dashboard/Dashboard.jsx'
 function App() {
-    const url = "http://localhost:5000"
+   // const url = "http://localhost:5000"
+   const url = " https://food-app-g7b9.onrender.com";
   return (
     <div>
       <ToastContainer
