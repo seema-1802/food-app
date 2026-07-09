@@ -3,7 +3,7 @@ import'./Login.css'
 import cross_icon from "../../assets/frontend_assets/cross_icon.png";
 import { StoreContext } from '../../context/StoreContext';
 import axios from "axios";
-
+import { toast } from "react-toastify";
 import { GoogleAuthProvider, signInWithPopup,  } from "firebase/auth";
 import { auth } from "../../FireBase/Firebase";
 
@@ -42,13 +42,9 @@ const [emailOtp, setEmailOtp] = useState("");
         })
       }
         if (response.data.success) {
-          console.log("TOKEN =", response.data.token);
-  console.log("USERID =", response.data.userId);
-
+        
   login(response.data.token, response.data.userId);
 
-  console.log("AFTER LOGIN token:", localStorage.getItem("token"));
-  console.log("AFTER LOGIN userId:", localStorage.getItem("userId"));
   setShowLogin(false);
 
       } else {
@@ -88,6 +84,7 @@ const [emailOtp, setEmailOtp] = useState("");
   }
 };
 const sendEmailOtp = async () => {
+  try {
   const response = await axios.post(
     `${url}/user/send-email-otp`,
     {
@@ -95,7 +92,16 @@ const sendEmailOtp = async () => {
     }
   );
 
-  alert("OTP Sent");
+   if (response.data.success) {
+      toast.success("OTP sent successfully to your email.");
+    } else {
+      toast.error(response.data.message);
+    }
+
+  } catch (error) {
+    toast.error("Failed to send OTP.");
+    console.log(error);
+  }
 };
 const verifyEmailOtp = async () => {
   const response = await axios.post(
