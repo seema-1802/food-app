@@ -220,14 +220,14 @@ return (
     />
     Continue with Google
   </button>
-{/* 
+
   <button
     type="button"
     className="email-otp-btn"
     onClick={() => setLoginMethod("email")}
   >
     📧 Continue with Email OTP
-  </button> */}
+  </button>
 </div>
 )}
 
