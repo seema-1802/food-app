@@ -22,7 +22,22 @@ const admin = JSON.parse(localStorage.getItem("admin"));
       <img className="logo" src={assets.logo} alt="" />
 
       <div className="profile-wrapper">
-     <img
+     {/* <img
+  className="profile"
+  src={
+    token
+      ? admin?.photo
+        ? admin.photo.startsWith("http")
+          ? admin.photo
+          : `${url}/images/${admin.photo}`
+        : assets.profile_image
+      : assets.profile_image
+  }
+  alt=""
+  onClick={() => setShowMenu(!showMenu)}
+  style={{ cursor: "pointer" }}
+/> */}
+<img
   className="profile"
   src={
     token
