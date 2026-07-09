@@ -14,15 +14,18 @@ dotenv.config()
 const app = express()
 connectDB()
 const PORT =  5000
-app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://food-app-five-ochre-16.vercel.app"
-  ],
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-}));
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://food-app-five-ochre-16.vercel.app", // User Frontend
+      "https://food-app-t49s.vercel.app",          // Admin
+    ],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 app.options("*", cors());
 app.use(express.json())
 // app.use(cors())
