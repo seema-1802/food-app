@@ -9,7 +9,8 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 export const placeOrderStripe = async (req, res) => {
   try {
-    const fronted="http://localhost:5173"
+    // const fronted="http://localhost:5173"
+    const fronted = process.env.FRONTEND_URL;
     const userId = req.user.id; // from auth token
     const { items, amount, address } = req.body;
 
