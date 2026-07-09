@@ -27,6 +27,11 @@ const adminSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
+
+fileId: {
+  type: String,
+  default: "",
+},
   },
   {
     timestamps: true,

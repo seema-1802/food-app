@@ -4,7 +4,8 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import validator from "validator";
 
-
+import fs from "fs";
+import imagekit from "../config/imagekit.js";
 
 export const registerAdmin = async (req, res) => {
 
@@ -148,13 +149,32 @@ export const updateAdminProfile = async (req, res) => {
     admin.name = name || admin.name;
     admin.email = email || admin.email;
 
-    // 🔥 FIX IMAGE HERE
+    // // 🔥 FIX IMAGE HERE
+    // if (req.file) {
+    //   admin.photo = req.file.filename;
+    // }
     if (req.file) {
-      admin.photo = req.file.filename;
-    }
+  const oldFileId = admin.fileId;
 
-    await admin.save();
+  const fileBuffer = fs.readFileSync(req.file.path);
 
+  const result = await imagekit.upload({
+    file: fileBuffer,
+    fileName: req.file.filename,
+    folder: "/admin-profile",
+  });
+
+  fs.unlinkSync(req.file.path);
+
+  admin.photo = result.url;
+  admin.fileId = result.fileId;
+
+  if (oldFileId) {
+    await imagekit.deleteFile(oldFileId);
+  }
+}
+
+await admin.save();
     res.json({
       success: true,
       message: "Profile Updated",

@@ -140,7 +140,7 @@ const [showEdit, setShowEdit] = useState(false);
      <div className="profile-header">
 
   <div className="profile-left">
-    <img
+    {/* <img
       src={
         admin?.photo
           ? admin.photo.startsWith("http")
@@ -150,7 +150,18 @@ const [showEdit, setShowEdit] = useState(false);
       }
       alt=""
       className="profile-image"
-    />
+    /> */}
+    <img
+  src={
+    admin?.photo
+      ? admin.photo.startsWith("http")
+        ? admin.photo // ImageKit URL
+        : `${url}/images/${admin.photo}` // Local uploads
+      : assets.profile // ya assets.upload_area
+  }
+  alt=""
+  className="profile-image"
+/>
      <button
         className="edit-btn"
         onClick={() => setShowEdit(!showEdit)}
@@ -180,7 +191,7 @@ const [showEdit, setShowEdit] = useState(false);
     <p>Upload Profile Image</p>
 
     <label htmlFor="image">
-      <img
+      {/* <img
         src={
           image
             ? URL.createObjectURL(image)
@@ -189,7 +200,19 @@ const [showEdit, setShowEdit] = useState(false);
             : assets.upload_area
         }
         alt=""
-      />
+      /> */}
+      <img
+  src={
+    image
+      ? URL.createObjectURL(image)
+      : editData.photo
+      ? editData.photo.startsWith("http")
+        ? editData.photo
+        : `${url}/images/${editData.photo}`
+      : assets.upload_area
+  }
+  alt=""
+/>
     </label>
 
     <input
