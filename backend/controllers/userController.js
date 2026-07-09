@@ -233,7 +233,23 @@ console.log("OTP:", otp);
       from: process.env.EMAIL_USER,
       to: email,
       subject: "Food App OTP",
-      text: `Your OTP is ${otp}`
+      text: `Your OTP is ${otp} 
+      Hello 👋
+
+Your One-Time Password (OTP) for login is:
+
+${otp}
+
+This OTP is valid for 5 minutes.
+
+Please do not share this OTP with anyone.
+
+If you did not request this OTP, please ignore this email.
+
+Thank you,
+Food App Team
+      
+      `
     });
 
 console.log("SMTP Connected");
